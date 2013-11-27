@@ -14,7 +14,7 @@ int main(int argc, char ** argv){
   int i, j, k;
   int frame_count = 0;
   int mean = 0, count = 0;
-  int threshold = 10;
+  int threshold = 2;
   int old_k = 0;
   char c;
 
@@ -58,9 +58,9 @@ int main(int argc, char ** argv){
     }
 
     cvShowImage("grey_image", image);
-    cvWaitKey(0);
-    cvDestroyWindow("grey_image");
+    cvWaitKey(10);
   }
+  cvDestroyWindow("grey_image");
 
   cvReleaseCapture(&camera);
 

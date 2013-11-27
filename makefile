@@ -1,8 +1,11 @@
-LIBS=-L/usr/local/Cellar/opencv/2.4.6.1/lib -l opencv_calib3d -l opencv_contrib -l opencv_core -l opencv_features2d -l opencv_flann -l opencv_gpu -l opencv_highgui -l opencv_imgproc -l opencv_legacy -l opencv_ml -l opencv_nonfree -l opencv_objdetect -l opencv_ocl -l opencv_photo -l opencv_stitching -l opencv_superres -l opencv_ts -l opencv_video -l opencv_videostab
-INCLUDES=-I/usr/local/Cellar/opencv/2.4.6.1/include/opencv -I/usr/local/Cellar/opencv/2.4.6.1/include
+CC=g++
+
+LIBS= -lopencv_calib3d -lopencv_contrib -lopencv_core -lopencv_features2d -lopencv_flann -lopencv_gpu -lopencv_highgui -lopencv_imgproc -lopencv_legacy -lopencv_ml -lopencv_nonfree -lopencv_objdetect -lopencv_photo -lopencv_stitching -lopencv_superres -lopencv_ts -lopencv_video -lopencv_videostab
+LIBPATH= -L /usr/local/lib
+
+INCLUDES= -I /usr/local/include/opencv -I /usr/local/include
 
 all:
-	g++ ${INCLUDES} ${LIBS} main.cpp -o edge-detect.o
-
+	$(CC) main.cpp $(INCLUDES) $(LIBS) $(LIBPATH) -o camera2.o
 clean:
-	rm ./*.o
+	rm *.o
